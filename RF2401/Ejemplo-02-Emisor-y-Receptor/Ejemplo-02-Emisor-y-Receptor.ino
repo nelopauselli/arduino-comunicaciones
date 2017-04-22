@@ -53,7 +53,8 @@ void loop(void){
   if(send){
     send = false;
     modoEmisor();
-    radio.write(22, 1);
+    msg[0] = 22;
+    radio.write(msg, 1);
     delay(10);
     Serial.println("Mensaje enviado");
     modoReceptor();
